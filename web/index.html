@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HUD</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="grid-container">
+        <!-- Modules will be injected here by JS -->
+    </div>
+
+    <div id="settings-btn" onclick="toggleSettings()">⚙️</div>
+
+    <div id="settings-overlay" class="hidden">
+        <h2>HUD Layout</h2>
+        <div class="settings-content">
+            <label><input type="checkbox" checked data-module="cpu" onchange="updateModules()"> CPU</label>
+            <label><input type="checkbox" checked data-module="ram" onchange="updateModules()"> RAM</label>
+            <label><input type="checkbox" checked data-module="net" onchange="updateModules()"> Network</label>
+            <label><input type="checkbox" checked data-module="battery" onchange="updateModules()"> Battery</label>
+            <label><input type="checkbox" checked data-module="uptime" onchange="updateModules()"> Uptime</label>
+        </div>
+        <button onclick="toggleSettings()">Close</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
